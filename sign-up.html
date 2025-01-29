@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إنشاء حساب</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/normalies.css" />
+    <link rel="stylesheet" href="./assets/css/sign-up.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        direction: rtl;
+        font-family: "Baloo Bhaijaan 2", sans-serif;
+      }
+      .error-message {
+        color: red;
+        font-size: 14px;
+        display: none;
+      }
+      .success-message {
+        color: green;
+        font-size: 16px;
+        text-align: center;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sign-up">
+      <div class="content">
+        <form id="registerForm" action="register.php" method="POST">
+          <div class="sign-up1">
+            <div>
+              <h1>إنشاء حساب جديد</h1>
+
+              <div class="input-field">
+                <label for="user-name"> الاسم :</label>
+                <input
+                  required
+                  type="text"
+                  id="user-name"
+                  name="userName"
+                  class="text-color"
+                  placeholder="نهال سراج الدين"
+                />
+                <p class="error-message" id="error-name"></p>
+              </div>
+
+              <div class="input-field">
+                <label for="email">البريد الإلكتروني :</label>
+                <input
+                  required
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="text-color"
+                  placeholder="emanabdullah@example.com"
+                />
+                <p class="error-message" id="error-email"></p>
+              </div>
+
+              <div class="input-field">
+                <label for="phone"> رقم الهاتف :</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="text-color"
+                  placeholder="0110xxxxxxxx"
+                />
+                <p class="error-message" id="error-phone"></p>
+              </div>
+
+              <div class="input-field">
+                <label for="password">كلمة المرور :</label>
+                <input
+                  required
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="text-color"
+                  placeholder="*************"
+                />
+                <p class="error-message" id="error-password"></p>
+              </div>
+
+              <div class="input-field">
+                <label for="password-confirm">تأكيد كلمة المرور :</label>
+                <input
+                  required
+                  type="password"
+                  id="password-confirm"
+                  name="passwordConfirm"
+                  class="text-color"
+                  placeholder="*************"
+                />
+                <p class="error-message" id="error-confirm-password"></p>
+              </div>
+
+              <p class="success-message" id="success-message"></p>
+
+              <input type="submit" value="التالي" id="next" class="next" />
+            </div>
+
+            <div>
+              <span class="span2">أو</span>
+              <div class="other-methods">
+                <a class="google" href="google_auth.php">
+                  <img src="./assets/images/devicon_google.svg" alt="google" />
+                  <p>تسجيل الدخول عن طريق Google</p>
+                </a>
+                <a class="linkedin" href="register.php?login=linkedin">
+                  <img
+                    src="./assets/images/devicon_linkedin.svg"
+                    alt="linkedin"
+                  />
+                  <p>تسجيل الدخول عن طريق Linkedin</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="image">
+        <img src="./assets/images/Group 10.png" alt="Group" />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          document
+            .querySelectorAll(".error-message")
+            .forEach((el) => (el.style.display = "none"));
+          document.getElementById("success-message").style.display = "none";
+
+          let formData = {
+            userName: document.getElementById("user-name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            passwordConfirm: document.getElementById("password-confirm").value,
+            phone: document.getElementById("phone").value,
+          };
+
+          fetch("register.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Server Response:", data); // Debugging response
+
+              if (data.errors) {
+                Object.keys(data.errors).forEach((field) => {
+                  let errorElement = document.getElementById("error-" + field);
+                  if (errorElement) {
+                    errorElement.innerText = data.errors[field];
+                    errorElement.style.display = "block";
+                  }
+                });
+              }
+              if (data.successMessage) {
+                document.getElementById("success-message").innerText =
+                  data.successMessage;
+                document.getElementById("success-message").style.display =
+                  "block";
+
+                if (data.redirect) {
+                  console.log("Redirecting to:", data.redirect); // Debugging redirect
+                  setTimeout(() => {
+                    window.location.href = data.redirect;
+                  }, 2000);
+                }
+              }
+            })
+            .catch(() => alert("حدث خطأ. الرجاء المحاولة مرة أخرى."));
+        });
+    </script>
+  </body>
+</html>

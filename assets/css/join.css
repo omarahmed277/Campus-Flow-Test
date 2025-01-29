@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+  }
+  
+  :root {
+    --primary-color: #00008d;
+    --text-primary: #101828;
+    --text-secondary: #667085;
+    --border-color: #98a2b3;
+    --bg-light: #f4f4f4;
+    --white: #fff;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: ltr;
+  }
+  
+  .sign-up {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: var(--bg-light);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Left Section Styles */
+  .left-section {
+    width: 45%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .illustration {
+    width: 100%;
+    height: 545px;
+    
+    object-fit: contain;
+  }
+  .logo-container{
+  padding-top: 7.53vw;
+  }
+  .pec {
+    position:relative;
+    bottom:1.7rem;
+  }
+  
+  /* Right Section Styles */
+  .right-section {
+    width: 55%;
+    padding: 3rem 4rem;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: right;
+    font-weight: 600;
+  }
+  
+  /* Form Styles */
+  .signup-form {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 1vw;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+    text-align: right;
+    color: var(--primary-color);
+  }
+  
+  /* إزالة السهم الافتراضي للـ select في المتصفحات المختلفة */
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-left: 2.5rem; /* مساحة للصورة */
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  /* إزالة السهم في Firefox */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  /* إضافة الصورة المخصصة */
+  .select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* حذف الكود القديم الخاص بالسهم */
+  .select-wrapper::after {
+    display: none;
+  }
+  
+  /* إضافة الصورة الجديدة */
+  .select-icon {
+    position: absolute;
+    left: 1rem; /* للمحاذاة من اليسار لأن الاتجاه RTL */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.2rem;
+    height: 1.2rem;
+    pointer-events: none; /* لمنع التفاعل مع الأيقونة */
+  }
+  select {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1.5px solid var(--Gray400, #98a2b3);
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--text-secondary);
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  select:focus {
+    border-color: var(--primary-color);
+  }
+  .linkedin-input{
+    
+    border: 1.5px solid var(--Gray400, #98a2b3);
+    border-radius: 10px;
+    font-family: "Baloo Bhaijaan 2", sans-serif;
+    padding: 8px 16px;
+    font-weight: normal;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: white;
+    text-align: right;
+    /* margin-right: 65px; */
+    width: 100%;
+  }
+  .linkedin-input::placeholder {
+    color: #98a2b3;
+    text-align: right;
+    padding-right: 2vw;
+    
+    font-size: 14px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--Gray400, #98a2b3);
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--text-secondary);
+    font-size: 14px;
+
+    outline: none;
+    height: 6rem;
+    resize: none;
+  }
+  
+  textarea:focus {
+    border-color: var(--primary-color);
+  }
+   
+  
+  /* Upload Section Styles */
+  .upload-section {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .upload-section:hover {
+    border-color: var(--primary-color);
+  }
+  
+  .upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .upload-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .upload-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .upload-text p{
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  /* .upload-text p:last-child {
+    color: crimson;
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+  } */
+  
+  .upload-text span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+  
+  /* Submit Button Styles */
+  .submit-btn {
+    width: 100%;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 24px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /* top: 8.5%; */
+  }
+  
+  .submit-btn:hover {
+    background-color: #000066;
+    transform: translateY(-1px);
+  }
+  
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Responsive Design */
+  @media screen and (min-width: 1200px) {
+    .submit-btn{
+      position: relative;
+      /* top: 8.5%; */
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .right-section {
+        padding: 2rem 3rem;
+    }
+    
+    .signup-form {
+        max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .sign-up {
+        /* flex-direction: column-reverse;
+        min-height: auto;
+        border-radius: 0; */
+    }
+  
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+  
+    .left-section {
+        padding: 2rem;
+    }
+  
+    .illustration {
+        /* width: 60%;
+        margin-top: 2rem; */
+    }
+  
+    .main-title {
+        margin-bottom: 2rem;
+    }
+    /* .submit-btn {
+      font-size: 1.25rem;
+      position: relative;
+      bottom: 43%;
+  } */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .right-section {
+        padding: 1.5rem;
+    }
+  
+    .main-title {
+        font-size: 1.5rem;
+    }
+  
+    .left-section {
+        display: none;
+    }
+    .sign-up{
+      background-color: #fff;
+    }
+  
+    .upload-section {
+        padding: 1.5rem;
+    }
+  
+    /* .submit-btn {
+        font-size: 1.25rem;
+        position: relative;
+      
+        
+    } */
+  }
+  
+  @media screen and (max-width: 480px) {
+    .right-section {
+        padding: 1rem;
+    }
+  
+    .form-group {
+        margin-bottom: 1rem;
+    }
+  
+    .upload-section {
+        padding: 1rem;
+    }
+  
+    .upload-icon {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+  
+    .upload-text p {
+        font-size: 0.875rem;
+    }
+  
+    .upload-text span {
+        font-size: 0.75rem;
+    }
+    /* .submit-btn {
+      font-size: 1.25rem;
+      position: relative;
+      bottom: 12%;
+  } */
+  }
+  
+  /* Animation */
+  /* @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  } */
+  
+  .sign-up {
+    animation: fadeIn 0.5s ease-out;
+  }
+  .upload-section {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.file-info {
+    display: flex;
+
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.file-icon, .delete-icon, .success-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    transform: translateY(-14px);
+    
+}
+.delete-icon, .success-icon{
+  position: relative;
+    bottom: 1.3vw;
+    transform: translateX(-3vw);
+}
+
+.success-icon {
+    display: none; /* Hidden by default */
+    color: #50C878;
+    
+}
+#file-display{
+  display: none;
+  padding-inline: 5.55vw;
+}
+.file-name-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  
+}
+.progress-child{
+  display: flex;
+  gap: 0.83vw;
+  
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    /* flex-direction: row; */
+    /* gap: 12px; */
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--primary-color);
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.progress-fill.complete {
+    background: #50C878;
+}
+.view-button {
+  display: block;
+  /* width: 100%; */
+position: relative;
+/* left: 2vw; */
+bottom: 1.75vw;
+font-size: 16px;
+line-height: 20px;
+font-weight: 600;
+color: #00008d;
+/* text-align: right; */
+display: inline-block;
+/* height: 20px; */
+outline: none;
+border: none;
+background-color: #fff;
+cursor: pointer;
+}
+.view-erore-button{
+  display: block;
+  /* width: 100%; */
+position: relative;
+/* left: 2vw; */
+/* bottom: 1.75vw; */
+font-size: 16px;
+line-height: 20px;
+font-weight: 600;
+color: #C92519;
+/* text-align: right; */
+display: inline-block;
+/* height: 20px; */
+outline: none;
+border: none;
+background-color: #fff;
+cursor: pointer;
+}
+
+

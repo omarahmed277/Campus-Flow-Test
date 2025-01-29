@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انضم كموجه مهني - Campus</title>
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@500;600&display=swap" />
+
+    
+    <link rel="stylesheet" href="./assets/css/join.css">
+</head>
+<body>
+    <div class="sign-up">
+        <!-- Left Section with Illustration -->
+        <div class="left-section">
+            <div class="logo-container">
+              <a href="./home.html"> <img src="./assets/images/home&join-as-amentor-images/logo2.svg" alt="Campus Logo" class="pec"></a> 
+                
+            </div>
+            <div class="illustration-container">
+                <img src="./assets/images/home&join-as-amentor-images/amico.png" alt="" class="illustration">
+            </div>
+        </div>
+
+        <!-- Right Section with Form -->
+        <div class="right-section">
+            <h1 class="main-title">انضم كموجه مهني</h1>
+            
+            <form class="signup-form" method="post">
+                <!-- Specialization Field -->
+				<div class="form-group">
+					<label class="form-label">التخصص:</label>
+					<div class="select-wrapper">
+						<select name="specialization" required>
+							<option value="ui-ux">UI\UX Design</option>
+							<option value="graphic">Graphic Design</option>
+							<option value="web">Web Development</option>
+						</select>
+						<img src="./assets/images/home&join-as-amentor-images/arrow-down-join-as.png" alt="" class="select-icon">
+					</div>
+				</div>
+
+                <!-- Experience Years Field -->
+                <div class="form-group">
+                    <label class="form-label">عدد سنوات الخبرة:</label>
+                    <div class="select-wrapper">
+                        <select name="experience" required>
+                            <option value="1-3">1-3 سنين خبرة</option>
+                            <option value="3-5">3-5 سنين خبرة</option>
+                            <option value="5+">أكثر من 5 سنوات</option>
+                        </select>
+						<img src="./assets/images/home&join-as-amentor-images/arrow-down-join-as.png" alt="" class="select-icon">
+
+                    </div>
+                </div>
+
+                <!-- Target Trainees Field -->
+                <div class="form-group">
+                    <label class="form-label">الفئه المستهدفه من المتدربين:</label>
+                    <div class="select-wrapper">
+                        <select name="target_group" required>
+                            <option value="beginners">المبتدئين</option>
+                            <option value="intermediate">متوسطي الخبرة</option>
+                            <option value="advanced">ذوي الخبرة</option>
+                        </select>
+						<img src="./assets/images/home&join-as-amentor-images/arrow-down-join-as.png" alt="" class="select-icon">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label"> رابط لينكدان:</label>
+                    
+                    <input type="email" class="linkedin-input" placeholder="*******************">
+                </div>
+
+                <!-- About Me Field -->
+                <div class="form-group">
+                    <label class="form-label">نبذة عني:</label>
+                    <textarea 
+                        name="about_me" 
+                        placeholder="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى"
+                        required
+                    ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" > ملاحظاتك:</label>
+                    <textarea style="height: 7rem;" 
+                        name="about_me" 
+                        placeholder="اكنب الملاحظات التي تريد من المتدرب معرفتها ونذويدك بها ....."
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- CV Upload Section -->
+                <div class="upload-section">
+                    <input 
+                        type="file" 
+                        id="cv-upload" 
+                        name="cv" 
+                        accept=".pdf,.doc,.docx" 
+                        style="display: none;"
+                        required
+                    >
+                    <div id="file-display">
+                        <div class="file-info">
+                            <img src="./assets/images/home&join-as-amentor-images/document-text.svg" alt="ملف" class="file-icon">
+                            <img src="./assets/images/home&join-as-amentor-images/document-text-erore.svg" alt="ملف" class="file-erore-icon">
+
+                            <div class="file-name-wrapper">
+                                
+                                    <p class="file-name"></p>
+                                    <p class="file-size"></p>
+                                    
+                            <button id="view-button" class="view-button">اضغط للعرض</button>
+                            <button id="view-erore-button" class="view-erore-button">حاول مجددا</button>
+
+                            </div>
+                            <img src=".//assets/images/home&join-as-amentor-images/trash-erore.svg" class="erore-delete-icon" alt="">
+                            <img src="./assets/images/home&join-as-amentor-images/trash.svg" alt="حذف" class="delete-icon">
+                            <img src="./assets/images/home&join-as-amentor-images/tick-circle.svg" class="success-icon" alt="">
+                        </div>
+                        
+                        <div class="progress-container">
+                            <div class="progress-child">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div class="progress-text" style="transform: translateY(-0.85vw);">0%</div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <label for="cv-upload" class="upload-content" id="upload-label">
+                        <div class="upload-icon">
+                            <img src="./assets/images/home&join-as-amentor-images/folder-add.svg" alt="Upload Icon">
+                        </div>
+                        <div class="upload-text">
+                            <p style="display: none;" class="erore-p">فشل التحميل، يرجى المحاولة مرة أخرى</p>
+                            <p>اضغط لرفع السيرة الذاتية</p>
+                            <span>(الحد الاقصى لحجم الملف: 25 MB)</span>
+                           
+                        </div>
+                    </label>
+                </div>
+                <button onclick="openInNewTab()" type="submit" class="submit-btn">انضم</button>
+                
+                <!-- <div id="error-display" class="error-message" style="display: none;">
+                    <div class="error-content">
+                        <div class="error-icons">
+                            <span class="delete-file-icon">🗑</span>
+                            <span class="file-icon">📄</span>
+                        </div>
+                        <p class="error-text">فشل التحميل، يرجى المحاولة مرة أخرى</p>
+                        <p class="file-name-error"></p>
+                        <button class="retry-button">حاول مجددا</button>
+                    </div>
+                </div> -->
+            
+                <script>
+                    function openInNewTab() {
+  window.open('join7.html', '_blank');
+}
+             document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('cv-upload');
+    const fileDisplay = document.getElementById('file-display');
+    const uploadLabel = document.getElementById('upload-label');
+    const fileName = document.querySelector('.file-name');
+    const fileSize = document.querySelector('.file-size');
+    const deleteIcon = document.querySelector('.delete-icon');
+    const errorDeleteIcon = document.querySelector('.erore-delete-icon');
+    const fileIcon = document.querySelector('.file-icon');
+    const fileErrorIcon = document.querySelector('.file-erore-icon');
+    const successIcon = document.querySelector('.success-icon');
+    const progressFill = document.querySelector('.progress-fill');
+    const progressText = document.querySelector('.progress-text');
+    const progressContainer = document.querySelector('.progress-container');
+    const viewButton = document.querySelector('.view-button');
+    const viewErrorButton = document.querySelector('.view-erore-button');
+    const errorP = document.querySelector('.erore-p');
+    const fileNameWrapper = document.querySelector('.file-name-wrapper');
+
+    let currentFile = null;
+
+    const retryParagraph = document.createElement('p');
+    retryParagraph.textContent = ' فشل التحميل، يرجى المحاولة مرة أخرى';
+    retryParagraph.style.color = '#C92519';
+    retryParagraph.style.margin = '0';
+    retryParagraph.style.display = 'none';
+    fileNameWrapper.insertBefore(retryParagraph, fileName);
+
+    fileInput.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (file) {
+            currentFile = file;
+            if (file.size > 25 * 1024 * 1024) {
+                alert('حجم الملف يتجاوز الحد الأقصى المسموح به (25 MB)');
+                this.value = '';
+                return;
+            }
+
+            fileDisplay.style.display = 'block';
+            uploadLabel.style.display = 'none';
+            errorDeleteIcon.style.display = 'none';
+            fileErrorIcon.style.display = 'none';
+            viewErrorButton.style.display = 'none';
+            errorP.style.display = 'none';
+            retryParagraph.style.display = 'none';
+            fileName.style.marginTop = '0';
+
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+
+            deleteIcon.style.display = 'block';
+            fileIcon.style.display = 'block';
+            successIcon.style.display = 'none';
+            progressContainer.style.display = 'block';
+
+            const existingViewButton = document.querySelector('.view-button');
+            if (existingViewButton) {
+                existingViewButton.remove();
+            }
+
+            simulateUploadProgress();
+        }
+    });
+
+    deleteIcon.addEventListener('click', function (e) {
+        e.stopPropagation();
+        fileInput.value = '';
+        currentFile = null;
+        fileDisplay.style.display = 'none';
+        uploadLabel.style.display = 'flex';
+        resetProgress();
+    });
+
+    function formatFileSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+        else return (bytes / 1048576).toFixed(1) + ' MB';
+    }
+
+    function simulateUploadProgress() {
+        let progress = 0;
+        progressFill.style.width = '0%';
+        progressFill.classList.remove('complete');
+
+        const interval = setInterval(() => {
+            progress += 5;
+            if (progress <= 100) {
+                progressFill.style.width = progress + '%';
+                progressText.textContent = progress + '%';
+
+                if (progress === 100) {
+                    clearInterval(interval);
+                    handleUploadError();
+                    return;
+                }
+
+                if (progress === 100) {
+                    progressFill.classList.add('complete');
+                    deleteIcon.style.display = 'none';
+                    successIcon.style.display = 'block';
+
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                        successIcon.style.display = 'none';
+                        deleteIcon.style.display = 'block';
+                        createViewButton();
+                    }, 1000);
+                }
+            } else {
+                clearInterval(interval);
+            }
+        }, 200);
+    }
+
+    function handleUploadError() {
+        errorP.style.display = 'block';
+        retryParagraph.style.display = 'block';
+        fileName.style.marginTop = '5px';
+        fileName.style.color = '#C92519';
+        fileSize.style.display='none'
+        // fileSize.textContent = fileName.textContent;
+        deleteIcon.style.display = 'none';
+        errorDeleteIcon.style.display = 'block';
+        fileIcon.style.display = 'none';
+        fileErrorIcon.style.display = 'block';
+        viewButton.style.display = 'none';
+        viewErrorButton.style.display = 'block';
+        progressContainer.style.display = 'none';
+    }
+
+    function createViewButton() {
+        const existingViewButton = document.querySelector('.view-button');
+        if (existingViewButton) {
+            existingViewButton.remove();
+        }
+
+        const viewButton = document.createElement('button');
+        viewButton.textContent = 'اضغط للعرض';
+        viewButton.className = 'view-button';
+
+        viewButton.addEventListener('click', function() {
+            if (currentFile) {
+                viewFile(currentFile);
+            }
+        });
+
+        const fileInfo = document.querySelector('.file-info');
+        fileInfo.parentNode.insertBefore(viewButton, fileInfo.nextSibling);
+    }
+
+    function viewFile(file) {
+        const fileType = file.type;
+        const fileUrl = URL.createObjectURL(file);
+
+        if (fileType.startsWith('image/')) {
+            window.open(fileUrl, '_blank');
+        } else if (fileType === 'application/pdf') {
+            window.open(fileUrl, '_blank');
+        } else if (fileType.startsWith('video/')) {
+            window.open(fileUrl, '_blank');
+        } else {
+            const a = document.createElement('a');
+            a.href = fileUrl;
+            a.download = file.name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    }
+
+    function resetProgress() {
+        progressFill.style.width = '0%';
+        progressText.textContent = '0%';
+        progressFill.classList.remove('complete');
+        deleteIcon.style.display = 'block';
+        successIcon.style.display = 'none';
+        progressContainer.style.display = 'block';
+        errorP.style.display = 'none';
+        retryParagraph.style.display = 'none';
+        fileName.style.marginTop = '0';
+
+        const viewButton = document.querySelector('.view-button');
+        if (viewButton) {
+            viewButton.remove();
+        }
+    }
+});
+                </script>
+</body>
+</html>

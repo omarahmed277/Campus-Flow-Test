@@ -1,0 +1,300 @@
+body {
+  direction: rtl;
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Gray600: #475467;
+  --Mailn-color: #00008d;
+  --Gray-900: #101828;
+  --White: #fff;
+  --main-color: #0000b8;
+  --Gray800: var(--Gray-900) #1d2939;
+  --Gray500: #667085;
+  --Gray400: #98a2b3;
+}
+.error-message {
+}
+.sign-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  /* height: 100vh; */
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+.sign-up .content h1 {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+.sign-up .image {
+  width: 41.11vw;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.sign-up .image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sign-up .content {
+  min-height: 100vh;
+  padding: 2.44vw 6.33vw 1.86vw 12.07vw;
+  width: 57.29vw;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  background: var(--White, #fff);
+}
+
+.sign-up .content form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.88vw;
+}
+.sign-up .content form > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.88vw;
+}
+
+.sign-up .content form div .input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.56vw;
+}
+.heddin-form {
+  display: none !important;
+}
+.sign-up .content form div label {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.sign-up .content form div input + p,
+.sign-up .content form div select + p,
+.sign-up .content form div textarea + p {
+  display: none;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20.54px;
+  text-align: right;
+  color: #db3b21;
+  margin: 0;
+  margin-top: -0.29vw;
+}
+.sign-up .content form div input,
+.sign-up .content form div select,
+.sign-up .content form div textarea {
+  padding: 0.56vw 1.11vw;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid var(--Gray400, #98a2b3);
+  background: #fff;
+  overflow: hidden;
+}
+.sign-up .content form div textarea {
+  resize: none;
+  height: 6.18vw;
+}
+
+.sign-up .content form div select {
+  appearance: none;
+  background-image: url(/images/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: 1.11vw 50%;
+}
+.text-color {
+  color: var(--Gray500, #667085);
+  text-align: right;
+  /* Mid- Body/Medium Body - Regula */
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.sign-up .content form > div > div:nth-child(2) {
+  gap: 0.56vw;
+}
+.sign-up .content .span2 {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: block;
+  margin: auto;
+  position: relative;
+  left: 0.28vw;
+  top: 0;
+}
+.sign-up .content .span2::after {
+  left: 20px;
+}
+.sign-up .content .span2::before {
+  right: 20px;
+}
+.sign-up .content .span2::after,
+.sign-up .content .span2::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 1px;
+  background-color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sign-up .content .other-methods {
+  display: flex;
+  align-items: center;
+  gap: 1.67vw;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sign-up .content .other-methods a p {
+  margin: 0;
+  color: #000;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.sign-up .content .other-methods a {
+  display: flex;
+  flex-direction: row;
+  padding: 0.56vw 1.11vw;
+  align-items: center;
+  gap: 0.28vw;
+  cursor: pointer;
+  border-radius: 7px;
+  border: 1px solid;
+  text-decoration: none;
+}
+.sign-up .content form input[type="submit"],
+.sign-up .content form .next {
+  display: flex;
+  padding: 0.56vw 1.11vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--Mailn-color, #00008d);
+  border: none;
+  margin-top: 0.6vw;
+  color: #f3fcff;
+  text-align: center;
+  /* H6/H6-Semi Bold */
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .sign-up .content {
+    padding: 5.46vw 2.34vw;
+  }
+  .sign-up .content form div textarea {
+    height: 10vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign-up .image {
+    display: none;
+  }
+  .sign-up .content {
+    width: 100%;
+    padding: 2.26vw 4.26vw;
+  }
+  .sign-up .content h1 {
+    font-size: 28px;
+  }
+  .sign-up .content form > div > div {
+    padding: 2.26vw;
+  }
+  .sign-up .content form div .input-field {
+    gap: 1vw;
+  }
+  .sign-up .content form div input,
+  .sign-up .content form div select,
+  .sign-up .content form div textarea {
+    padding: 1vw 2vw;
+  }
+  .sign-up .content form div textarea {
+    height: 12vw;
+  }
+  .sign-up .content form input[type="submit"],
+  .sign-up .content form .next {
+    padding: 1vw 2vw;
+    font-size: 20px;
+    margin-top: 3vw;
+  }
+  .sign-up .content .other-methods {
+    justify-content: center;
+    gap: 6.4vw;
+  }
+  .sign-up .content .other-methods div img {
+    width: 24px;
+    height: 24px;
+  }
+  .sign-up .content .other-methods div {
+    padding: 2.13vw 4.26vw;
+  }
+  .sign-up .content .other-methods div p {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .sign-up .content h1 {
+    font-size: 24px;
+  }
+  .sign-up .content .other-methods a p {
+    font-size: 13px;
+  }
+  .sign-up .content form > div > div {
+    gap: 4.26vw;
+  }
+  .sign-up .content form div .input-field {
+    gap: 2.13vw;
+  }
+  .sign-up .content form div input,
+  .sign-up .content form div select,
+  .sign-up .content form div textarea {
+    padding: 2vw 3.26vw;
+  }
+  .sign-up .content form div textarea {
+    height: 30vw;
+  }
+  .sign-up .content form input[type="submit"],
+  .sign-up .content form .next {
+    padding: 2vw 3.26vw;
+    font-size: 20px;
+    margin-top: 4.26vw;
+  }
+}

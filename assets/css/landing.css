@@ -1,0 +1,1175 @@
+* {
+  box-sizing: border-box;
+  direction: rtl;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --Gray300: #d0d5dd;
+  --Mailn-color: #00008d;
+  --Gray-900: #101828;
+  --White: #fff;
+  --Acsent-Color: #ff1d35;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.11vw 5.56vw;
+  border-bottom: 1px solid var(--Gray300, #d0d5dd);
+}
+header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.22vw;
+  padding: 0.56vw;
+  border-radius: 58px;
+  border: 1px solid var(--Gray300, #d0d5dd);
+}
+header .nav a {
+  display: flex;
+  padding: 0.56vw 1.11vw;
+  align-items: center;
+  text-decoration: none;
+  color: var(--Gray-900, #101828);
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.active-link {
+  border-radius: 50px;
+  border: 1px solid var(--Mailn-color, #00008d);
+  color: var(--Mailn-color, #00008d);
+}
+header .logo {
+  cursor: pointer;
+}
+header .registration {
+  display: flex;
+  align-items: center;
+  gap: 1.11vw;
+}
+header .registration button {
+  padding: 0.56vw 1.11vw;
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 50px;
+  cursor: pointer;
+}
+header .registration .log-in-btn {
+  color: var(--White, #fff);
+  background: var(--Mailn-color, #00008d);
+  border: 1px solid var(--Mailn-color, #00008d);
+}
+header .registration .sign-up-btn {
+  color: var(--Mailn-color, #00008d);
+  background-color: var(--White, #fff);
+  border: 1px solid var(--Mailn-color, #00008d);
+}
+header .nav-icon {
+  display: none;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  header {
+    padding: 1.6vw 3.9vw;
+  }
+  header .logo img {
+    width: 155px;
+    height: 39px;
+  }
+  header .nav a {
+    font-size: 18px;
+  }
+  header .registration button {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  header .nav {
+    display: none;
+  }
+  header .registration {
+    display: none;
+  }
+  header .nav-icon {
+    display: flex;
+  }
+}
+
+.landing {
+  display: flex;
+  align-items: center;
+  height: 33.75vw;
+  position: relative;
+  background-image: url(../images/landing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.landing-overlay {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 255, 255, 0.4)
+  );
+}
+.landing .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 37.1vw;
+  gap: 32px;
+  z-index: 1;
+  margin-right: 5.56vw;
+}
+.landing .text p {
+  color: var(--White, #fff);
+  text-align: right;
+  font-family: Lalezar;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 77px */
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .landing .text p {
+    font-size: 36px;
+  }
+}
+.landing .text a {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-left: 26px;
+}
+.landing .text a img {
+  width: 24px;
+  height: 24px;
+  padding: 0.55vw;
+  border-radius: 50px;
+  background: var(--Secondary-Color, #ffcf00);
+}
+.landing .image {
+  position: relative;
+}
+.landing .image .gradient {
+  width: 24.3vw;
+  height: 24.3vw;
+  border-radius: 27.78vw;
+  background: linear-gradient(0deg, #ffcf00 0%, #fff 100%);
+}
+.landing .image .image1 {
+  position: absolute;
+  width: 29.37vw;
+  height: 33.24vw;
+  top: -4.97vw;
+  left: 1.6vw;
+}
+.landing .image .Ellipse1 {
+  position: absolute;
+  bottom: -1.52vw;
+  left: 4.17vw;
+  width: 17.63vw;
+}
+.landing .image .Ellipse2 {
+  position: absolute;
+  left: -1.5vw;
+  top: 13.4vw;
+  width: 5vw;
+}
+.landing .image .Ellipse3 {
+  position: absolute;
+  top: -0.76vw;
+  left: -1.6vw;
+  width: 9.1vw;
+}
+.landing .image svg:first-of-type {
+  position: absolute;
+  top: 0;
+  right: 1vw;
+  z-index: 2;
+  width: 4.9vw;
+}
+.landing .image svg:nth-of-type(2) {
+  position: absolute;
+  top: 3vw;
+  right: 0.8vw;
+  z-index: 1;
+  width: 3.5vw;
+}
+.landing .image svg:nth-of-type(3) {
+  position: absolute;
+  top: 5.5vw;
+  right: 0.6vw;
+  width: 2.1vw;
+}
+
+.landing .malin {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.landing .malin img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.landing .malin img:first-child {
+  width: 23.7vw;
+}
+.landing .malin img:nth-child(2) {
+  width: 30.62vw;
+}
+.landing .malin img:nth-child(3) {
+  width: 37.57vw;
+}
+.landing .malin img:nth-child(4) {
+  width: 34.51vw;
+  left: 1.6vw;
+}
+.landing .acsent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.landing .acsent img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.landing .acsent img:nth-child(1) {
+  width: 12.7vw;
+}
+.landing .acsent img:nth-child(2) {
+  width: 9.23vw;
+}
+.landing .acsent img:nth-child(3) {
+  width: 5.77vw;
+}
+.landing .acsent img:nth-child(4) {
+  width: 3vw;
+}
+.landing .acsent img:nth-child(5) {
+  width: 13.12vw;
+}
+.landing .acsent img:nth-child(6) {
+  width: 16.18vw;
+}
+.landing .yellow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.landing .yellow img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.landing .yellow img:nth-child(1) {
+  width: 8.26vw;
+}
+.landing .yellow img:nth-child(2) {
+  width: 11.73vw;
+}
+.landing .yellow img:nth-child(3) {
+  width: 15.2vw;
+}
+.landing .yellow img:last-child {
+  bottom: 0.9vw;
+  width: 9.44vw;
+}
+
+/* /////////////////// */
+.about {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.78vw 5.56vw;
+  align-items: center;
+  gap: 7.63vw;
+  margin-bottom: 2.78vw;
+}
+.about .text {
+  flex: 1;
+}
+.about .text h3 {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.about .text div {
+  margin-bottom: 20px;
+}
+.about .text p {
+  color: var(--Gray700, #344054);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  margin: 0;
+}
+.about .text span {
+  color: var(--Gray400, #98a2b3);
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+@media (max-width: 1024px) {
+  .about .text h3 {
+    font-size: 24px;
+  }
+  .about .text p {
+    font-size: 24px;
+  }
+  .about .text span {
+    font-size: 20px;
+  }
+}
+.about .images {
+  width: 39.23vw;
+  height: 43.125vw;
+  position: relative;
+}
+.about .images img {
+  position: absolute;
+}
+.hidden-images {
+  display: none;
+}
+.about .images .one {
+  left: 0;
+  bottom: 0;
+  width: 17.36vw;
+}
+.about .images .tow {
+  top: 0;
+  left: 0;
+  width: 17.36vw;
+}
+.about .images .three {
+  bottom: 1.4vw;
+  right: 0;
+  width: 20.34vw;
+}
+.about .images .four {
+  right: 0;
+  top: 3.75vw;
+  width: 20.34vw;
+}
+@media (max-width: 767px) {
+  .about {
+    flex-direction: column-reverse;
+    padding-inline: 4.26vw;
+  }
+  .about .text p {
+    font-size: 20px;
+  }
+  .about .text span {
+    font-size: 18px;
+  }
+  .about .images {
+    width: 100%;
+    height: 100vw;
+  }
+  .about .images .one,
+  .about .images .tow {
+    width: 39.2vw;
+  }
+  .about .images .three {
+    bottom: 2.6vw;
+    width: 46.13vw;
+  }
+  .about .images .four {
+    width: 46.13vw;
+    top: 9.5vw;
+  }
+}
+.fields {
+  margin-bottom: 2.78vw;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.78vw 5.56vw 2.22vw;
+}
+.title h3 {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.title .arrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title .arrow svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .title h3 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .title h3 {
+    font-size: 24px;
+  }
+  .title .arrow div {
+    width: 24px;
+  }
+  .title img {
+    width: 16px;
+    height: 16px;
+  }
+}
+.fields-images {
+  display: flex;
+  align-items: center;
+  padding: 0 0 2.78vw 0;
+  overflow: hidden;
+  gap: 24px;
+  transition: 0.3s;
+  margin-right: 5.56vw;
+  overflow: hidden;
+}
+.fields-images > div {
+  margin: 0;
+  position: relative;
+  width: 237px;
+  height: 336px;
+  transition: 0.5s ease;
+}
+.fields-images > div:hover {
+  width: 426px;
+}
+.fields-images .field-img {
+  width: 237px;
+  height: 336px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.fields-images > div:hover .field-img {
+  width: 426px;
+}
+.fields-images > div:last-child {
+  margin-left: 20px;
+}
+.fields-images .overlay {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  padding: 2.22vw 2.1vw 6.94vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6.11vw;
+}
+.fields-images .overlay img {
+  width: 60px;
+  height: 60px;
+}
+.fields-images .overlay .text {
+  margin: 0;
+}
+.fields-images .overlay .text span {
+  color: var(--White, #fff);
+  text-align: right;
+  font-family: Lalezar;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.fields-images .overlay .text p {
+  color: var(--White, #fff);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+  display: none;
+  margin: 0;
+}
+.fields-images > div:hover > img + .overlay .text p {
+  display: block;
+}
+@media (max-width: 1024px) {
+  .fields-images > div,
+  .fields-images .field-img {
+    width: 200px;
+    height: 300px;
+  }
+  .fields-images > div:hover .field-img {
+    width: 400px;
+  }
+  .fields-images .overlay img {
+    width: 45px;
+    height: 45px;
+  }
+  .fields-images .overlay .text span {
+    font-size: 32px;
+  }
+  .fields-images .overlay .text p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .fields-images > div,
+  .fields-images .field-img {
+    width: 158px;
+    height: 227px;
+  }
+  /* .fields-images > div:hover .field-img {
+    width: 400px;
+  } */
+}
+
+.stories {
+  padding-right: 5.6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.stories .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.11vw;
+}
+.stories .text p {
+  color: var(--Base-color, #1e1e1e);
+  text-align: right;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 166.667% */
+}
+.stories .text div {
+  display: flex;
+  align-items: center;
+  gap: 1.4vw;
+}
+.stories .text div svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.stories .story {
+  position: relative;
+  /* flex: 1; */
+  display: flex;
+  justify-content: flex-end;
+}
+.stories .story > img:first-child {
+  width: 42vw;
+  height: 50vw;
+}
+.stories .story img:nth-child(2) {
+  position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 39vw;
+  height: 50vw;
+}
+.stories .story .cards {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2.1vw;
+  right: -14vw;
+}
+.stories .story .cards .card {
+  transition: 0.3s;
+  display: flex;
+  width: 41.7vw;
+  padding: 2.8vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.7vw;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+}
+.stories .story .cards .card .person {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.04vw;
+}
+.stories .story .cards .card .person img {
+  border-radius: 50%;
+}
+.stories .story .cards .card .person h3 {
+  color: var(--Mailn-color, #00008d);
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.stories .story .cards .card .person span {
+  color: #555;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.stories .story .cards .card p {
+  color: #1e1e1e;
+  text-align: right;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  margin: 0;
+}
+
+/* /////////////// */
+.suggested-mentors .title {
+  padding-bottom: 0;
+}
+.suggested-mentors .cards {
+  display: flex;
+  align-items: center;
+  padding: 0 0 2.78vw 0;
+  overflow: hidden;
+  gap: 24px;
+  transition: 0.3s;
+  margin-right: 5.56vw;
+}
+.suggested-mentors .cards .card {
+  border-radius: 30px;
+  border: 1px solid var(--Gray300, #d0d5dd);
+  background: var(--White, #fff);
+  position: relative;
+  margin: 0;
+  margin-top: 11.8vw;
+  width: 398px;
+  transition: 0.3s;
+}
+.suggested-mentors .cards .card > img:first-child {
+  position: absolute;
+  top: -8vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13.9vw;
+  height: 13.9vw;
+}
+
+.suggested-mentors .cards .card > svg:nth-child(2) {
+  margin: 4vw 1.52vw auto auto;
+}
+.suggested-mentors .cards .card h3 {
+  margin: 2.29vw auto 0;
+  color: var(--Gray-900, #101828);
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.suggested-mentors .cards .card span:nth-child(4) {
+  color: var(--Gray-900, #101828);
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: block;
+  margin-bottom: 0.56vw;
+}
+.suggested-mentors .cards .card .stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 0.56vw;
+}
+.suggested-mentors .cards .card p {
+  color: var(--Gray-900, #101828);
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0 3.75vw;
+  width: 398px;
+}
+.suggested-mentors .cards .card span:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  color: var(--Gray-900, #101828);
+  text-align: center;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 1.4vw 1.7vw;
+  cursor: pointer;
+}
+.suggested-mentors .cards .card span:last-child div {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50%;
+  background: var(--Mailn-color, #00008d);
+}
+.suggested-mentors .cards .card span:last-child img {
+  width: 12px;
+  height: 14px;
+  stroke-width: 2px;
+  stroke: var(--White, #fff);
+}
+@media (max-width: 1024px) {
+  .suggested-mentors .cards .card {
+    width: 303px;
+  }
+  .suggested-mentors .cards .card > img:first-child {
+    width: 14.64vw;
+    height: 14.64vw;
+  }
+  .suggested-mentors .cards .card > svg:nth-child(2) {
+    width: 17.6vw;
+    height: 17.6vw;
+  }
+  .suggested-mentors .cards .card h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  .suggested-mentors .cards .card span:nth-child(4) {
+    font-size: 18px;
+  }
+  .suggested-mentors .cards .card p {
+    font-size: 14px;
+    width: 303px;
+    padding-inline: 1.1vw;
+  }
+  .suggested-mentors .cards .card span:last-child {
+    font-size: 20px;
+  }
+  .suggested-mentors .cards .card span:last-child div {
+    width: 20px;
+    height: 20px;
+  }
+  .suggested-mentors .cards .card span:last-child img {
+    width: 10px;
+    height: 12px;
+  }
+  .suggested-mentors .cards .card > svg:nth-child(3) {
+    margin: 5.37vw 3.6vw auto auto;
+  }
+  .suggested-mentors .cards .card span:nth-child(5) {
+    font-size: 18px;
+    margin-bottom: 0.8vw;
+  }
+  .suggested-mentors .cards .card .stars {
+    margin-bottom: 0.8vw;
+  }
+  .suggested-mentors .cards .card span:last-child {
+    margin: auto auto 1.7vw 2vw;
+  }
+}
+@media (max-width: 767px) {
+  .suggested-mentors .cards .card {
+    margin-top: 21.4vw;
+  }
+  .suggested-mentors .cards .card p {
+    padding-inline: 3vw;
+  }
+  .suggested-mentors .cards .card > img:first-child {
+    top: -13vw;
+    width: 22vw;
+    height: 22vw;
+  }
+  .suggested-mentors .cards .card > svg:nth-child(2) {
+    width: 27vw;
+    height: 27vw;
+    top: -15.5vw;
+  }
+  .suggested-mentors .cards .card > svg:nth-child(3) {
+    margin: 7.6vw 4.9vw auto auto;
+  }
+  .suggested-mentors .cards .card span:nth-child(5) {
+    font-size: 18px;
+    margin-bottom: 2.13vw;
+  }
+  .suggested-mentors .cards .card .stars {
+    margin-bottom: 2.13vw;
+  }
+  .suggested-mentors .cards .card span:last-child {
+    margin: auto auto 4.27vw 5.3vw;
+  }
+}
+@media (max-width: 450px) {
+  .suggested-mentors .cards .card > img:first-child {
+    top: -22vw;
+    width: 40vw;
+    height: 40vw;
+  }
+  .suggested-mentors .cards .card > svg:nth-child(2) {
+    width: 48vw;
+    height: 48vw;
+    top: -25.8vw;
+  }
+  .suggested-mentors .cards .card > svg:nth-child(3) {
+    margin: 14.6vw 9.9vw auto auto;
+  }
+  .suggested-mentors .cards .card {
+    margin-top: 38.4vw;
+  }
+}
+.our-users {
+  padding: 2.8vw 5.6vw 9.4vw;
+}
+.our-users h3 {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 3.13vw;
+}
+.our-users .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.36vw, 1fr));
+  gap: 2.22vw;
+}
+@media (max-width: 850px) {
+  .our-users .cards {
+    grid-template-columns: repeat(auto-fit, minmax(30.13vw, 1fr));
+  }
+}
+.our-users .cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.11vw;
+}
+.our-users .cards .card div:first-child {
+  display: flex;
+  width: 90px;
+  height: 90px;
+  padding: 21.485px 21px 20.515px 21px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: var(--Mailn-color, #00008d);
+}
+.our-users .cards .card div img {
+  width: 32px;
+  height: 32px;
+}
+.our-users .cards .card .text span {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+  font-family: Manrope;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-bottom: 0.6vw;
+}
+.our-users .cards .card .text p {
+  color: var(--Gray500, #667085);
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .our-users .cards .card div:first-child {
+    width: 47px;
+    height: 47px;
+  }
+  .our-users .cards .card .text span {
+    font-size: 20px;
+  }
+  .our-users .cards .card .text p {
+    font-size: 14px;
+  }
+}
+
+.application {
+  padding-left: 5.56vw;
+  padding-bottom: 2.8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+}
+.application div:first-child {
+  height: 44.16vw;
+  width: 58.9vw;
+}
+.application div:first-child img {
+  width: 100%;
+  height: 100%;
+}
+.application .text {
+  width: 31.3vw;
+}
+.application .text > img {
+  width: 4.16vw;
+  height: 4.16vw;
+}
+.application .text > p {
+  color: var(--Gray-900, #101828);
+  text-align: right;
+
+  /* H4/H4 bold */
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 1.7vw;
+}
+.application .text div {
+  display: flex;
+  width: 35vw;
+  align-items: center;
+  gap: 16px;
+}
+.application .text div span {
+  display: flex;
+  padding: 0.3vw 1.22vw;
+  align-items: center;
+  gap: 0.3vw;
+  color: var(--Gray-900, #101828);
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 10px;
+  border: 1px solid var(--Gray-900, #101828);
+  cursor: pointer;
+}
+.application .text div img,
+.application .text svg {
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 1024px) {
+  .application div:first-child {
+    width: 50.2vw;
+    height: 37.6vw;
+  }
+  .application .text > img {
+    width: 4.9vw;
+    height: 4.9vw;
+  }
+  .application .text > p {
+    font-size: 24px;
+  }
+  .application .text {
+    width: 35vw;
+  }
+}
+@media (max-width: 767px) {
+  .application {
+    flex-direction: column;
+    padding-inline: 4.26vw;
+  }
+  .application div:first-child {
+    width: 100%;
+    height: 100%;
+  }
+  .application .text > img {
+    width: 16vw;
+    height: 16vw;
+  }
+  .application .text {
+    width: 100%;
+  }
+  .application .text div span {
+    font-size: 16px;
+  }
+  .application .text div {
+    width: 91vw;
+  }
+}
+
+footer {
+  background: var(--Mailn-color, #00008d);
+  padding: 1.7vw 5.56vw;
+}
+footer > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 3.9vw;
+}
+footer > div:first-child .text {
+  display: grid;
+  gap: 1.7vw;
+}
+footer > div:first-child .text > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 277px;
+}
+footer > div:first-child .text div:first-child a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 124px;
+}
+footer > div:first-child a {
+  text-decoration: none;
+}
+footer > div:first-child .text div img {
+  width: 24px;
+  height: 24px;
+}
+footer > div:first-child .text > div > span {
+  opacity: 0.7;
+}
+footer > div:first-child .text div span,
+footer > div:first-child .text div div span {
+  color: var(--White, #fff);
+  font-family: Assistant;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+footer div .footer-logo img:first-child {
+  height: 46.23px;
+}
+footer div .footer-logo img:nth-child(2) {
+  height: 76.79px;
+}
+footer > div:nth-child(2) {
+  display: flex;
+  padding-block: 1.7vw;
+  justify-content: space-between;
+  align-items: center;
+}
+footer > div:nth-child(2) div {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+footer > div:nth-child(2) div a {
+  color: var(--White, #fff);
+  font-family: Assistant;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+footer > div:nth-child(2) p {
+  color: var(--White, #fff);
+  font-family: Assistant;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.7;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  footer {
+    padding: 2.3vw 7.8vw;
+  }
+  footer div .footer-logo img:first-child {
+    height: 42.744px;
+  }
+  footer div .footer-logo img:nth-child(2) {
+    height: 71px;
+  }
+}

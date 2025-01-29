@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- HTML -->
+<div class="feedback-modal-overlay" id="feedbackModal">
+  <div class="feedback-modal">
+    <div class="feedback-text">
+      <h2>اخبرنا عن مدى رضاك بخدمتنا !</h2>
+      <h2> بخدمتنا!</h2>
+    </div>
+    
+    <div class="feedback-options">
+      <button class="feedback-option">
+        <span class="emoji"><img src="./assets/images/home&join-as-amentor-images/emoge-ممتازpng.png" alt=""></span>
+        <span class="label">ممتاز</span>
+      </button>
+      <button class="feedback-option">
+        <span class="emoji"><img src="./assets/images/home&join-as-amentor-images/emoge-جيدجدا.png" alt=""></span>
+
+        <span class="label">جيد جداً</span>
+      </button>
+      <button class="feedback-option">
+        <span class="emoji"><img src="./assets/images/home&join-as-amentor-images/emoge-جيد.png" alt=""></span>
+        <span class="label">جيد</span>
+      </button>
+      <button class="feedback-option">
+        <span class="emoji"><img src="./assets/images/home&join-as-amentor-images/سيئ-emoge.png" alt=""></span>
+        <span class="label">سيء</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.feedback-modal {
+  background-color: white;
+  border-radius: 12px;
+  padding: 32px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  direction: rtl;
+}
+
+.feedback-modal h2 {
+  /* margin: 0 0 32px 0; */
+  line-height: 2;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+.feedback-text{
+  margin-bottom: 2vw;
+}
+
+.feedback-options {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.feedback-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.feedback-option img{
+  width: 40px;
+}
+
+.feedback-option:hover {
+  transform: scale(1.1);
+}
+
+.feedback-option .emoji {
+  font-size: 36px;
+}
+
+.feedback-option .label {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Hide modal by default */
+.feedback-modal-overlay.hidden {
+  display: none;
+}
+</style>
+
+<script>
+// Toggle modal visibility
+function toggleFeedbackModal() {
+  const modal = document.getElementById('feedbackModal');
+  modal.classList.toggle('hidden');
+}
+
+// Add click handlers to feedback options
+document.querySelectorAll('.feedback-option').forEach(button => {
+  button.addEventListener('click', function() {
+    // Remove active class from all buttons
+    document.querySelectorAll('.feedback-option').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Add active class to clicked button
+    this.classList.add('active');
+    
+    // Here you can add code to handle the feedback submission
+    // For example, send to server or store locally
+    
+    // Close modal after small delay
+    setTimeout(() => {
+      toggleFeedbackModal();
+    }, 500);
+  });
+});
+
+// Close modal when clicking overlay
+document.querySelector('.feedback-modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) {
+    toggleFeedbackModal();
+  }
+});
+</script>
+<!-- HTML -->
+<div class="feedback-form-overlay hidden" id="feedbackForm">
+  <div class="feedback-form">
+    <h2>شكراً على تقييمك</h2>
+    <p class="subtitle">نرجوا منك وضع تجربتك لنساعد غيرك</p>
+    
+    <div class="form-group">
+      <label>ما مدى فعالية الجلسة في حل مشكلتك ؟</label>
+      <select class="form-select">
+        <option value="" disabled selected>اختر اجابة</option>
+        <option value="1">فعالة جداً</option>
+        <option value="2">فعالة</option>
+        <option value="3">متوسطة</option>
+        <option value="4">غير فعالة</option>
+      </select>
+      <img src="./assets/images/home&join-as-amentor-images/arrow-down-rate-black.png" alt="" class="select-icon">
+
+    </div>
+
+    <div class="form-group">
+      <label>ما مدى احتمالية أن توصي بهذه الخدمة لأصدقائك أو زملائك؟</label>
+      <select class="form-select">
+       
+        <option selected value="1">  نعم</option>
+        <option value="2">لا </option>
+       
+      </select>
+      <img src="./assets/images/home&join-as-amentor-images/arrow-down-rate-black.png" alt="" class="select-icon">
+
+    </div>
+
+    <div class="form-group">
+      <label>اضف رأيك بالخدمة بشكل عام:</label>
+      <textarea placeholder="اكتب رأيك هنا..."></textarea>
+    </div>
+
+    <button class="submit-btn">التالي</button>
+  </div>
+</div>
+
+<style>
+.feedback-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+
+}
+.select-icon {
+  position: absolute;
+    left: 29vw;
+    /* top: 43vw; */
+    /* top: 21vw; */
+    transform: translateY(22%);
+    /* width: 1.2rem; */
+    height: 27px;
+    pointer-events: none;
+}
+select{
+  outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+
+.feedback-form {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  direction: rtl;
+}
+
+.feedback-form h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.feedback-form .subtitle {
+  text-align: center;
+  color: #666;
+  margin: 8px 0 24px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #00008d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+
+}
+
+/* .submit-btn:hover {
+  background-color: #000066;
+} */
+
+.hidden {
+  display: none;
+}
+</style>
+
+<script>
+// تحديث الكود السابق للنافذة الأولى
+document.querySelectorAll('.feedback-option').forEach(button => {
+  button.addEventListener('click', function() {
+    document.querySelectorAll('.feedback-option').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    this.classList.add('active');
+    
+    // إخفاء النافذة الأولى
+    document.getElementById('feedbackModal').classList.add('hidden');
+    
+    // إظهار النافذة الثانية
+    setTimeout(() => {
+      document.getElementById('feedbackForm').classList.remove('hidden');
+    }, 300);
+  });
+});
+
+// إغلاق النافذة الثانية عند النقر خارجها
+document.querySelector('.feedback-form-overlay').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.classList.add('hidden');
+  }
+});
+
+// معالجة تقديم النموذج
+document.querySelector('.submit-btn').addEventListener('click', function() {
+  // هنا يمكنك إضافة كود لمعالجة البيانات المدخلة
+  document.getElementById('feedbackForm').classList.add('hidden');
+  // يمكنك إضافة رسالة شكر أو أي إجراء آخر هنا
+});
+</script>
+<!-- HTML -->
+<div class="thank-you-overlay hidden" id="thankYouModal">
+  <div class="thank-you-modal">
+    <div class="heart">❤️</div>
+    <h2>شكراً على تقييمك</h2>
+    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي</p>
+    <button class="close-btn">إنهاء</button>
+  </div>
+</div>
+
+<style>
+.thank-you-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+
+}
+
+.thank-you-modal {
+  background-color: white;
+  border-radius: 12px;
+  padding: 32px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  direction: rtl;
+}
+
+.heart {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.thank-you-modal h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.thank-you-modal p {
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.close-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #000080;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+
+}
+
+/* .close-btn:hover {
+  background-color: #000066;
+} */
+
+.hidden {
+  display: none;
+}
+</style>
+
+<script>
+// تحديث معالج زر الحفظ في النافذة السابقة
+document.querySelector('.submit-btn').addEventListener('click', function() {
+  // إخفاء نافذة النموذج
+  document.getElementById('feedbackForm').classList.add('hidden');
+  
+  // إظهار نافذة الشكر
+  setTimeout(() => {
+    document.getElementById('thankYouModal').classList.remove('hidden');
+  }, 300);
+});
+
+// إغلاق نافذة الشكر عند الضغط على زر الإنهاء
+document.querySelector('.close-btn').addEventListener('click', function() {
+  document.getElementById('thankYouModal').classList.add('hidden');
+});
+
+// إغلاق النافذة عند النقر خارجها
+document.querySelector('.thank-you-overlay').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.classList.add('hidden');
+  }
+});// تحديث معالج حدث زر الإنهاء
+document.querySelector('.close-btn').addEventListener('click', function() {
+    // إخفاء جميع النوافذ المنبثقة
+    document.getElementById('feedbackModal').classList.add('hidden');
+    document.getElementById('feedbackForm').classList.add('hidden');
+    document.getElementById('thankYouModal').classList.add('hidden');
+    
+    // إعادة تعيين أي حالات نشطة
+    document.querySelectorAll('.feedback-option').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // إعادة تعيين قيم النموذج (اختياري)
+    document.querySelectorAll('select').forEach(select => {
+        select.selectedIndex = 0;
+    });
+    document.querySelector('textarea').value = '';
+});
+</script>
+    <div class="nav">
+      <div class="listicon mm">
+        <img class="imgL" src="./assets/images/home&join-as-amentor-images/textalign-justifycenter.svg" alt="" />
+      </div>
+      <div class="butonshedden">
+        <div class="join">
+          <!-- <button class="b1">إنشاء حساب</button> -->
+          <button class="b2">تسجيل الخروج</button>
+        </div>
+      </div>
+
+      <div class="innerNav">
+        <div class="link">
+          <ul>
+            <li><a href="./index-profile.html">الحساب الشخصي</a></li>
+            <li><a href="./pages/coach.html"> الموجهين</a></li>
+            <!-- <li><a href="#"> مجالاتنا</a></li> -->
+            <li class="check"><a href="#">من نحن</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <img class="logo mm" src="./assets/images/home&join-as-amentor-images/Frame.svg" alt="" />
+    </div>
+
+    <section class="search">
+      <!-- <div class="main-container"> -->
+      <div class="filter-container" >
+        <div class="filter-input" id="toggleDropdown" style="display: flex; cursor: pointer; gap: 4px;">
+          <div class="filter-text">فلتر</div>
+          <div class="icon-container">
+            <img
+              class="image"
+              src="./assets/images/home&join-as-amentor-images/mage_filter (2).svg"
+              alt=""
+              
+            />
+          </div>
+        </div>
+        
+      
+        <div class="dropdown-list open">
+          <div class="dropdown-menu1 dropdown-menuformat">
+            <a href="#"
+              ><span id="langA"
+                ><img class="rotate" src="./assets/images/home&join-as-amentor-images/arrow-up.svg" alt=""
+              /></span>
+              اللغة</a
+            >
+            <div class="dropdown-menu2 dropdown-menuformat">
+              <a href="#">
+                الأنجليزية <input type="checkbox" name="ch1" id="checkbox"
+              /></a>
+              <a href="#">
+                الفرنسية <input type="checkbox" name="ch2" id="checkbox"
+              /></a>
+              <a href="#">
+                الألمانية <input type="checkbox" name="ch3" id="checkbox"
+              /></a>
+            </div>
+            <a href="#"
+              ><span id="A2"
+              ><img class="rotate" src="./assets/images/home&join-as-amentor-images/arrow-up.svg" alt=""
+              /></span>
+              الخبرة</a
+            >
+            <div class="dropdown-menu3 dropdown-menuformat">
+              <a href="#">
+                من 1 الي 3<input type="checkbox" name="ch4" id="checkbox"
+              /></a>
+              <a href="#">
+                من 3 الي 5<input type="checkbox" name="ch5" id="checkbox"
+              /></a>
+              <a href="#">
+                من 5 الي 7<input type="checkbox" name="ch6" id="checkbox"
+              /></a>
+            </div>
+            <a href="#"
+              ><span id="A3"
+              ><img class="rotate" src="./assets/images/home&join-as-amentor-images/arrow-up.svg" alt=""
+              /></span>
+              المجال</a
+            >
+            <div class="dropdown-menu4 dropdown-menuformat start">
+              <a href="#"
+                ><img src="./assets/images/home&join-as-amentor-images/arrow-down.svg" alt="" /> front-end<input
+                  type="checkbox"
+                  name="ch1"
+                  id="checkbox"
+              /></a>
+              <a href="#"
+              ><img src="./assets/images/home&join-as-amentor-images/arrow-down.svg" alt="" /> front-end<input
+                  type="checkbox"
+                  name="ch1"
+                  id="checkbox"
+              /></a>
+              <a href="#"
+              ><img src="./assets/images/home&join-as-amentor-images/arrow-down.svg" alt="" /> front-end<input
+                  type="checkbox"
+                  name="ch1"
+                  id="checkbox"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="البحث" />
+        <span class="search-icon">
+          <img src="./assets/images/home&join-as-amentor-images/ri_search-line (1).svg" alt="" />
+        </span>
+      </div>
+      <!-- </div> -->
+    </section>
+
+    <!-- ***** -->
+    <div class="container">
+      <div class="visible-container">
+        <div class="row">
+          <div class="card">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card" id="heddencards">
+            <div class="card-text">التسويق</div>
+          </div>
+          <div class="card" id="heddencards">
+            <div class="card-text">البرمجة</div>
+          </div>
+          <div class="special card" id="heddencards">
+            <div class="card-text">التصميم</div>
+          </div>
+        </div>
+      </div>
+      <div class="arrows-container">
+        <div class="arrow arrow-left">
+          <button style="border: none; background-color: white;"><img src="./assets/images/home&join-as-amentor-images/cards-arrow-left.png" alt=""></button> 
+        </div>
+        <div class="arrow arrow-right">
+          <button style="border: none; background-color: white;"><img src="./assets/images/home&join-as-amentor-images/cards-arrow-right.png" alt=""></button> 
+        </div>
+      </div>
+    </div>
+
+    
+      
+      
+    
+    
+
+      
+
+       
+    
+    
+    <!-- $$$$$$$$$ -->
+
+    <div class="H-con">
+      <div class="suggest-con">
+       
+        <div class="card-arrow">
+          <img src="./assets/images/home&join-as-amentor-images/cards-arrow-left.png" alt="">
+          <img src="./assets/images/home&join-as-amentor-images/cards-arrow-right.png" alt="">
+        </div>
+        <p  class="suggested">موجهين مقترحين</p>
+      </div>
+      
+
+      <div class="con">
+       
+        
+        <div class="card1 cardformat">
+          <div class="background-card" style="background-color:  #00008F;">
+            
+          </div> 
+          <div class="profile-header">
+            <!-- <div class="containerC">
+              <svg viewBox="0 0 200 200" class="CIRCLE">
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="95"
+                  class="circle"
+                  id="circle1"
+                ></circle>
+              </svg>
+            </div> -->
+
+            <img src=".//assets/images/home&join-as-amentor-images/Frame 2306.png" alt="" class="profile-image" />
+          </div>
+
+
+          <div class="text">
+            <h2 class="name">محمد مصطفى</h2>
+            <div class="title">التسويق</div>
+            <div class="ratting">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+               
+            </div>
+            <p class="description">
+              ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </p>
+          </div>
+          <div class="more-button">
+            <div class="Vector">
+              <img src="./assets/images/home&join-as-amentor-images/Vector-left.svg" alt="Vector"  />
+            </div>
+            <p class="more-text">احجز جلسة</p>
+          </div>
+        </div>
+       
+        <div class="card2 cardformat">
+          <div class="background-card" style="background-color:red">
+            
+          </div>
+          <div class="profile-header">
+            
+
+            <img src="./assets/images/home&join-as-amentor-images/Frame 2306.png" alt="" class="profile-image" />
+          </div>
+
+          
+          <div class="text">
+            <h2 class="name">محمد مصطفى</h2>
+            <div class="title">التسويق</div>
+            <div class="ratting">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+               
+            </div>
+            <p class="description">
+              ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </p>
+          </div>
+          <div class="more-button test-button">
+            <div class="Vector">
+              <img src="./assets/images/home&join-as-amentor-images/Vector-left.svg" alt="Vector"  />
+            </div>
+            <style>
+              .test-button{
+                background: #00008D;
+ width: 113px;
+ height: 34px;
+ border-radius: 8px;
+              }
+            </style>
+            
+
+            <p style="color: white;" class="more-text">احجز جلسة</p>
+          </div>
+        </div>
+
+        <div class="card3 cardformat">
+          <div class="background-card" style="background-color: yellow;">
+            
+          </div> 
+          <div class="profile-header">
+           
+
+            <img src="./assets/images/home&join-as-amentor-images/Frame 2306.png" alt="" class="profile-image" />
+          </div>
+
+          
+          <div class="text">
+            <h2 class="name">محمد مصطفى</h2>
+            <div class="title">التسويق</div>
+            <div class="ratting">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+               
+            </div>
+            <p class="description">
+              ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </p>
+          </div>
+          <div class="more-button">
+            <div class="Vector">
+              <img src="./assets/images/home&join-as-amentor-images/Vector-left.svg" alt="Vector"  />
+            </div>
+
+            <p class="more-text">احجز جلسة</p>
+          </div>
+        </div>
+        <!-- <div class="background-card">
+            
+        </div> -->
+        <div class="card4 cardformat" >
+          <div class="background-card" style="background-color:  #00008F;">
+            
+          </div> 
+          <div class="profile-header">
+            
+
+            <img src="./assets/images/home&join-as-amentor-images/Frame 2306.png" alt="" class="profile-image" />
+          </div>
+
+          
+          
+          <div class="text">
+            <h2 class="name">محمد مصطفى</h2>
+            <div class="title">التسويق</div>
+            <div class="ratting">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+               
+             
+             </div>
+            
+            <p class="description">
+              ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </p>
+          </div>
+          <div class="more-button">
+            <div class="Vector">
+              <img src="./assets/images/home&join-as-amentor-images/Vector-left.svg" alt="Vector"  />
+            </div>
+            <p class="more-text">احجز جلسة</p>
+          </div>
+        </div>
+
+        <div class="card5 cardformat" >
+          <div class="background-card" style="background-color:red">
+            
+          </div> 
+          <div class="profile-header">
+            
+
+            <img src="./assets/images/home&join-as-amentor-images/Frame 2306.png" alt="" class="profile-image" />
+          </div>
+
+          
+          <div class="text">
+            <h2 class="name">محمد مصطفى</h2>
+            <div class="title">التسويق</div>
+            <div class="ratting">
+              <img src="./imags/material-symbols_star-rounded.svg" alt="">
+              <img src="./imags/material-symbols_star-rounded.svg" alt="">
+              <img src="./imags/material-symbols_star-rounded.svg" alt="">
+              <img src="./imags/material-symbols_star-rounded.svg" alt="">
+              <img src="./imags/material-symbols_star-rounded.svg" alt="">
+              
+            </div>
+            <p class="description">
+              ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </p>
+          </div>
+          <div class="botton-con">
+            <div class="more-button">
+              <div class="Vector">
+                <img src="./assets/images/home&join-as-amentor-images/Vector-left.svg" alt="Vector"  />
+              </div>
+              <p class="more-text">احجز جلسة</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card6 cardformat" >
+          <div class="background-card" style="background-color: yellow;">
+            
+          </div> 
+          <div class="profile-header">
+            
+            <img src="./assets/images/home&join-as-amentor-images/Frame 2306.png" alt="" class="profile-image" />
+          </div>
+
+          
+          <div class="text">
+            <h2 class="name">محمد مصطفى</h2>
+            <div class="title">التسويق</div>
+            <div class="ratting">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+              <img src="./assets/images/home&join-as-amentor-images/material-symbols_star-rounded.svg" alt="">
+               
+            </div>
+            <p class="description">
+              ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق.
+            </p>
+          </div>
+          <div class="more-button">
+            <div class="Vector">
+              <img src="./assets/images/home&join-as-amentor-images/Vector-left.svg" alt="Vector"  />
+            </div>
+            <p class="more-text">احجز جلسة</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/home.js"></script>
+
+    <footer class="footer">
+      <hr />
+      <div class="section1F responsiveF">
+        <span class="RFL-S">
+          <div class="contact-info">
+            <div class="phone">
+              <span
+                >(123) 456-7890 <img src=".//assets/images/home&join-as-amentor-images/round-phone-24px.svg" alt=""
+              /></span>
+              <span
+                >(123) 456-7890
+                <img src="./assets/images/home&join-as-amentor-images/round-local-printshop-24px.svg" alt=""
+              /></span>
+            </div>
+
+            <div class="social-media">
+              <a href="#"><img src="./assets/images/home&join-as-amentor-images/facebook black.1.svg" alt="" /></a>
+              <a href="#"><img src="./assets/images/home&join-as-amentor-images/linkedin black.1.svg " alt="" /></a>
+              <a href="#"><img src=".//assets/images/home&join-as-amentor-images/rss black.1.svg " alt="" /></a>
+              <a href="#"
+                ><img src="./assets/images/googleplus black.1.svg " alt=""
+              /></a>
+              <span>: مواقع التواصل</span>
+            </div>
+          </div>
+          <div class="logoRFL">
+            <img src="./assets/images/home&join-as-amentor-images/rEL-LOGO.png" class="RFL" alt="" />
+          </div>
+        </span>
+        <div class="logo">
+          <img class="logoF" src="./assets/images/home&join-as-amentor-images/footer-imag.png" alt="campus logo" />
+          <img class="cumpsF" src="./assets/images/home&join-as-amentor-images/footerCaumps.png" alt="" />
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="copyright">
+          <p>Copyright © 2018 - Lift Media Inc.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">معلومات عنا</a>
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">ساعدني</a>
+          <a href="#">تواصل معنا</a>
+        </div>
+      </div>
+      <hr />
+    </footer>
+  </body>
+</html>
